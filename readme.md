@@ -82,6 +82,48 @@ render(
 
 Restart your server with ctrl-c and up arrow to run the command to restart it and the results in Chrome will be the same.
 
+### Refactoring Elements using JSX
+We can add styles to our React Element. So back in our `index.js`
+
+```js
+const style = {
+    backgroundColor: 'orange',
+    color: 'white',
+    fontFamily: 'Verdana'
+}
+
+//Add the property to apply the style
+const title = createElement {
+    'h1',
+    { id: 'title', className: 'header', style: style },
+    Hello World
+}
+```
+Next we'll refactor our `render` using JSX and we can remove our `createElement` call since we are using JSX.
+
+```js
+const { createElement } = React
+
+const style = {
+    backgroundColor: 'orange',
+    color: 'white',
+    fontFamily: 'Verdana'
+}
+
+render(
+    <h1 id='title'
+        className='header'
+        style={style}>
+    Hello World
+    </h1>
+    document.getElementById('react-container') //where to render it
+)
+```
+Things will break here since we need to add Babel to transpile our JSX in to JS that is supported by the browser.
+
+
+
+
 [1]: https://www.lynda.com/React-js-tutorials/React-js-Essential-Training/496905-2.html
 [2]: https://nodejs.org/en/download/
 [3]: https://facebook.github.io/react/
