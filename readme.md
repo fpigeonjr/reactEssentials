@@ -119,11 +119,42 @@ render(
     document.getElementById('react-container') //where to render it
 )
 ```
-Things will break here since we need to add Babel to transpile our JSX in to JS that is supported by the browser.
+Things will break here since we need to add [Babel][4] to transpile our JSX into JS that is supported by the browser.
 
+## Babel Transpiling
+[Babel][4] is the leading tool for transpiling JavaScript.
 
+### Setting up your project using npm
+From the console run
 
+```js
+npm init
+```
+
+Give your project a name, and answer any questions that add value or hit `enter` to accept the default. Once completed, you'll see this creates a `package.json` file in your project.
+
+Next you'll want to install the `babel-cli` to our dev dependencies
+
+```js
+npm install --save-dev babel-cli
+```
+and to install the package globally **optional**
+
+```js
+npm install -g babel-cli
+```
+
+### Directory Structure
+
+We'll move all our React code to the `src` directory and our `dist` directory will contain code that is ready for the browser
+
+### Building with webpack
+Webpack is a module bundler that helps us create static files and helps us automate processes that need to happen before our files can go into production.
+
+Create a new file called `webpack.config.js`
+We'll specify the entry point of the project, where to output files, add loaders which specify the tasks we want webpack to perform. We'll replace `httpster` with webpack's `devServer`.
 
 [1]: https://www.lynda.com/React-js-tutorials/React-js-Essential-Training/496905-2.html
 [2]: https://nodejs.org/en/download/
 [3]: https://facebook.github.io/react/
+[4]: https://babeljs.io/
