@@ -102,7 +102,7 @@ const title = createElement {
 Next we'll refactor our `render` using JSX and we can remove our `createElement` call since we are using JSX.
 
 ```js
-const { createElement } = React
+const { render } = ReactDOM
 
 const style = {
     backgroundColor: 'orange',
