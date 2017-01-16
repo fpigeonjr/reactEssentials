@@ -4,7 +4,7 @@ import { render } from 'react-dom'
 import { SkiDayCount } from './components/SkiDayCount'
 window.React = React
 render (
-    <SkiDayCount/>,
+    <SkiDayCount backcountry={false} />,
     document.getElementById('react-container')
 )
 
