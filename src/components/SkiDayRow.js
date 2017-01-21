@@ -5,7 +5,7 @@ import { PropTypes } from 'react'
 
 export const SkiDayRow = ({resort, date, powder, backcountry}) => (
     <tr>
-        <td>{date.getMonth()+1}/{date.getDate()}/{date.getFullYear()}</td>
+        <td>{date}</td>
         <td>{resort}</td>
         <td>{(powder) ? <SnowFlake/> : null}</td>
         <td>{(backcountry) ? <Terrain/> : null}</td>
@@ -15,7 +15,7 @@ export const SkiDayRow = ({resort, date, powder, backcountry}) => (
 
 SkiDayRow.PropTypes = {
     resort: PropTypes.string.isRequired,
-    date: PropTypes.instanceOf(Date).isRequired,
+    date: PropTypes.string.isRequired,
     powder: PropTypes.bool,
     backcountry: PropTypes.bool
 }
